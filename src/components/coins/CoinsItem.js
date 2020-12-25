@@ -4,7 +4,7 @@ import Ripple from 'react-native-material-ripple';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 
-const CoinsItem = ({ item }) => {
+const CoinsItem = ({ item, onPress }) => {
 
   const getImageArrow = () => {
     if( item.percent_change_1h > 0 ) {
@@ -15,7 +15,7 @@ const CoinsItem = ({ item }) => {
   }
 
   return (
-    <Ripple style={ styles.container }>
+    <Ripple onPress={onPress} style={ styles.container }>
       <View style={ styles.containerContentLeft }>
         <View style={ styles.symbolContainer }>
           <Text  style={ styles.symbolText }>{ item.symbol }</Text>
